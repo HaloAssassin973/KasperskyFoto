@@ -1,5 +1,5 @@
 //
-//  PhotoViewCell.swift
+//  PhotoCollectionViewCell.swift
 //  KasperskyFoto
 //
 //  Created by Игорь Силаев on 28/11/2019.
@@ -8,7 +8,6 @@
 
 import UIKit
 
-class PhotoViewCell: UICollectionViewCell {
-    @IBOutlet weak var photoImage: UIImageView!
+class PhotoCollectionViewCell: UICollectionViewCell {
     
 }
