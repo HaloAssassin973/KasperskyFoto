@@ -14,6 +14,11 @@
 		45801D86238FC78D00BEC5EF /* KasperskyFoto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45801D84238FC78D00BEC5EF /* KasperskyFoto.xcdatamodeld */; };
 		45801D88238FC79100BEC5EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45801D87238FC79100BEC5EF /* Assets.xcassets */; };
 		45801D8B238FC79100BEC5EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45801D89238FC79100BEC5EF /* LaunchScreen.storyboard */; };
+		45801D94238FDF0500BEC5EF /* OnePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D93238FDF0500BEC5EF /* OnePhotoViewController.swift */; };
+		45801D98238FDFB700BEC5EF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D96238FDFB700BEC5EF /* NetworkService.swift */; };
+		45801D99238FDFB700BEC5EF /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D97238FDFB700BEC5EF /* NetworkDataFetcher.swift */; };
+		45801D9C238FDFBF00BEC5EF /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D9B238FDFBF00BEC5EF /* SearchResults.swift */; };
+		45801DA4238FF49A00BEC5EF /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801DA3238FF49A00BEC5EF /* PhotoViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		45801D87238FC79100BEC5EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45801D8A238FC79100BEC5EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45801D8C238FC79100BEC5EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45801D93238FDF0500BEC5EF /* OnePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePhotoViewController.swift; sourceTree = "<group>"; };
+		45801D96238FDFB700BEC5EF /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		45801D97238FDFB700BEC5EF /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		45801D9B238FDFBF00BEC5EF /* SearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
+		45801DA3238FF49A00BEC5EF /* PhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +68,10 @@
 		45801D7A238FC78D00BEC5EF /* KasperskyFoto */ = {
 			isa = PBXGroup;
 			children = (
+				45801D95238FDF9A00BEC5EF /* Network */,
+				45801D92238FDECE00BEC5EF /* VC */,
 				45801D7B238FC78D00BEC5EF /* AppDelegate.swift */,
 				45801D7D238FC78D00BEC5EF /* SceneDelegate.swift */,
-				45801D7F238FC78D00BEC5EF /* ViewController.swift */,
 				45801D81238FC78D00BEC5EF /* Main.storyboard */,
 				45801D87238FC79100BEC5EF /* Assets.xcassets */,
 				45801D89238FC79100BEC5EF /* LaunchScreen.storyboard */,
@@ -68,6 +79,34 @@
 				45801D84238FC78D00BEC5EF /* KasperskyFoto.xcdatamodeld */,
 			);
 			path = KasperskyFoto;
+			sourceTree = "<group>";
+		};
+		45801D92238FDECE00BEC5EF /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				45801D7F238FC78D00BEC5EF /* ViewController.swift */,
+				45801D93238FDF0500BEC5EF /* OnePhotoViewController.swift */,
+				45801DA3238FF49A00BEC5EF /* PhotoViewCell.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		45801D95238FDF9A00BEC5EF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				45801D97238FDFB700BEC5EF /* NetworkDataFetcher.swift */,
+				45801D96238FDFB700BEC5EF /* NetworkService.swift */,
+				45801D9A238FDFBF00BEC5EF /* Models */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		45801D9A238FDFBF00BEC5EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				45801D9B238FDFBF00BEC5EF /* SearchResults.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +180,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45801D99238FDFB700BEC5EF /* NetworkDataFetcher.swift in Sources */,
 				45801D80238FC78D00BEC5EF /* ViewController.swift in Sources */,
+				45801DA4238FF49A00BEC5EF /* PhotoViewCell.swift in Sources */,
 				45801D7C238FC78D00BEC5EF /* AppDelegate.swift in Sources */,
 				45801D7E238FC78D00BEC5EF /* SceneDelegate.swift in Sources */,
 				45801D86238FC78D00BEC5EF /* KasperskyFoto.xcdatamodeld in Sources */,
+				45801D98238FDFB700BEC5EF /* NetworkService.swift in Sources */,
+				45801D9C238FDFBF00BEC5EF /* SearchResults.swift in Sources */,
+				45801D94238FDF0500BEC5EF /* OnePhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
