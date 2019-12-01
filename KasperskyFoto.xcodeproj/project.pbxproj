@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1537B7BDBF2AEA18CB39101A /* Pods_KasperskyFoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FAD1022929AA60F9968DDE /* Pods_KasperskyFoto.framework */; };
 		45801D7C238FC78D00BEC5EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D7B238FC78D00BEC5EF /* AppDelegate.swift */; };
 		45801D7E238FC78D00BEC5EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D7D238FC78D00BEC5EF /* SceneDelegate.swift */; };
 		45801D80238FC78D00BEC5EF /* PhotoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D7F238FC78D00BEC5EF /* PhotoListViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37FAD1022929AA60F9968DDE /* Pods_KasperskyFoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KasperskyFoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45801D78238FC78D00BEC5EF /* KasperskyFoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KasperskyFoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45801D7B238FC78D00BEC5EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45801D7D238FC78D00BEC5EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		45801DA52390482000BEC5EF /* PhotoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
 		45801DA723904A7600BEC5EF /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		45801DAB23904FA800BEC5EF /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
+		9EDCA50B69916AA779C6D9D1 /* Pods-KasperskyFoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasperskyFoto.release.xcconfig"; path = "Target Support Files/Pods-KasperskyFoto/Pods-KasperskyFoto.release.xcconfig"; sourceTree = "<group>"; };
+		AF084B63C55D565FB23E6C13 /* Pods-KasperskyFoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasperskyFoto.debug.xcconfig"; path = "Target Support Files/Pods-KasperskyFoto/Pods-KasperskyFoto.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1537B7BDBF2AEA18CB39101A /* Pods_KasperskyFoto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +63,8 @@
 			children = (
 				45801D7A238FC78D00BEC5EF /* KasperskyFoto */,
 				45801D79238FC78D00BEC5EF /* Products */,
+				E035133CA4BC8817220C9869 /* Pods */,
+				D2BA15FC8BC38C700D9914AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +138,24 @@
 			path = Videos;
 			sourceTree = "<group>";
 		};
+		D2BA15FC8BC38C700D9914AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37FAD1022929AA60F9968DDE /* Pods_KasperskyFoto.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E035133CA4BC8817220C9869 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF084B63C55D565FB23E6C13 /* Pods-KasperskyFoto.debug.xcconfig */,
+				9EDCA50B69916AA779C6D9D1 /* Pods-KasperskyFoto.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45801D8F238FC79100BEC5EF /* Build configuration list for PBXNativeTarget "KasperskyFoto" */;
 			buildPhases = (
+				B612572552BE6CEF2F1DCBA6 /* [CP] Check Pods Manifest.lock */,
 				45801D74238FC78D00BEC5EF /* Sources */,
 				45801D75238FC78D00BEC5EF /* Frameworks */,
 				45801D76238FC78D00BEC5EF /* Resources */,
+				7878EA3E616B3DE4B8087791 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,6 +223,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7878EA3E616B3DE4B8087791 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KasperskyFoto/Pods-KasperskyFoto-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KasperskyFoto/Pods-KasperskyFoto-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KasperskyFoto/Pods-KasperskyFoto-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B612572552BE6CEF2F1DCBA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KasperskyFoto-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		45801D74238FC78D00BEC5EF /* Sources */ = {
@@ -354,6 +423,7 @@
 		};
 		45801D90238FC79100BEC5EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF084B63C55D565FB23E6C13 /* Pods-KasperskyFoto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -372,6 +442,7 @@
 		};
 		45801D91238FC79100BEC5EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EDCA50B69916AA779C6D9D1 /* Pods-KasperskyFoto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
