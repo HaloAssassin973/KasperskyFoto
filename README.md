@@ -1,2 +1,0 @@
-# KasperskyFoto
- App for LK
