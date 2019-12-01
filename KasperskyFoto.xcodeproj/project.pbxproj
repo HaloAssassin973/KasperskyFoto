@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45801D7C238FC78D00BEC5EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D7B238FC78D00BEC5EF /* AppDelegate.swift */; };
+		45801D7E238FC78D00BEC5EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D7D238FC78D00BEC5EF /* SceneDelegate.swift */; };
+		45801D80238FC78D00BEC5EF /* PhotoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D7F238FC78D00BEC5EF /* PhotoListViewController.swift */; };
+		45801D83238FC78D00BEC5EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45801D81238FC78D00BEC5EF /* Main.storyboard */; };
+		45801D86238FC78D00BEC5EF /* KasperskyFoto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45801D84238FC78D00BEC5EF /* KasperskyFoto.xcdatamodeld */; };
+		45801D88238FC79100BEC5EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45801D87238FC79100BEC5EF /* Assets.xcassets */; };
+		45801D8B238FC79100BEC5EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45801D89238FC79100BEC5EF /* LaunchScreen.storyboard */; };
+		45801D94238FDF0500BEC5EF /* OnePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D93238FDF0500BEC5EF /* OnePhotoViewController.swift */; };
+		45801D98238FDFB700BEC5EF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D96238FDFB700BEC5EF /* NetworkService.swift */; };
+		45801D99238FDFB700BEC5EF /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D97238FDFB700BEC5EF /* NetworkDataFetcher.swift */; };
+		45801D9C238FDFBF00BEC5EF /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D9B238FDFBF00BEC5EF /* SearchResults.swift */; };
+		45801DA62390482000BEC5EF /* PhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801DA52390482000BEC5EF /* PhotoCollectionView.swift */; };
+		45801DA823904A7600BEC5EF /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801DA723904A7600BEC5EF /* PhotoCollectionViewCell.swift */; };
+		45801DAC23904FA800BEC5EF /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801DAB23904FA800BEC5EF /* VideoListViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		45801D78238FC78D00BEC5EF /* KasperskyFoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KasperskyFoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45801D7B238FC78D00BEC5EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		45801D7D238FC78D00BEC5EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		45801D7F238FC78D00BEC5EF /* PhotoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewController.swift; sourceTree = "<group>"; };
+		45801D82238FC78D00BEC5EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		45801D85238FC78D00BEC5EF /* KasperskyFoto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KasperskyFoto.xcdatamodel; sourceTree = "<group>"; };
+		45801D87238FC79100BEC5EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45801D8A238FC79100BEC5EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		45801D8C238FC79100BEC5EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45801D93238FDF0500BEC5EF /* OnePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePhotoViewController.swift; sourceTree = "<group>"; };
+		45801D96238FDFB700BEC5EF /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		45801D97238FDFB700BEC5EF /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		45801D9B238FDFBF00BEC5EF /* SearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
+		45801DA52390482000BEC5EF /* PhotoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
+		45801DA723904A7600BEC5EF /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		45801DAB23904FA800BEC5EF /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45801D75238FC78D00BEC5EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45801D6F238FC78D00BEC5EF = {
+			isa = PBXGroup;
+			children = (
+				45801D7A238FC78D00BEC5EF /* KasperskyFoto */,
+				45801D79238FC78D00BEC5EF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		45801D79238FC78D00BEC5EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45801D78238FC78D00BEC5EF /* KasperskyFoto.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45801D7A238FC78D00BEC5EF /* KasperskyFoto */ = {
+			isa = PBXGroup;
+			children = (
+				45801D95238FDF9A00BEC5EF /* Network */,
+				45801D92238FDECE00BEC5EF /* VC */,
+				45801D7B238FC78D00BEC5EF /* AppDelegate.swift */,
+				45801D7D238FC78D00BEC5EF /* SceneDelegate.swift */,
+				45801D81238FC78D00BEC5EF /* Main.storyboard */,
+				45801D87238FC79100BEC5EF /* Assets.xcassets */,
+				45801D89238FC79100BEC5EF /* LaunchScreen.storyboard */,
+				45801D8C238FC79100BEC5EF /* Info.plist */,
+				45801D84238FC78D00BEC5EF /* KasperskyFoto.xcdatamodeld */,
+			);
+			path = KasperskyFoto;
+			sourceTree = "<group>";
+		};
+		45801D92238FDECE00BEC5EF /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				45801DAA23904E1C00BEC5EF /* Videos */,
+				45801DA923904E0400BEC5EF /* Photos */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		45801D95238FDF9A00BEC5EF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				45801D97238FDFB700BEC5EF /* NetworkDataFetcher.swift */,
+				45801D96238FDFB700BEC5EF /* NetworkService.swift */,
+				45801D9A238FDFBF00BEC5EF /* Models */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		45801D9A238FDFBF00BEC5EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				45801D9B238FDFBF00BEC5EF /* SearchResults.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		45801DA923904E0400BEC5EF /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				45801D7F238FC78D00BEC5EF /* PhotoListViewController.swift */,
+				45801D93238FDF0500BEC5EF /* OnePhotoViewController.swift */,
+				45801DA52390482000BEC5EF /* PhotoCollectionView.swift */,
+				45801DA723904A7600BEC5EF /* PhotoCollectionViewCell.swift */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		45801DAA23904E1C00BEC5EF /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				45801DAB23904FA800BEC5EF /* VideoListViewController.swift */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		45801D77238FC78D00BEC5EF /* KasperskyFoto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45801D8F238FC79100BEC5EF /* Build configuration list for PBXNativeTarget "KasperskyFoto" */;
+			buildPhases = (
+				45801D74238FC78D00BEC5EF /* Sources */,
+				45801D75238FC78D00BEC5EF /* Frameworks */,
+				45801D76238FC78D00BEC5EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KasperskyFoto;
+			productName = KasperskyFoto;
+			productReference = 45801D78238FC78D00BEC5EF /* KasperskyFoto.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45801D70238FC78D00BEC5EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Игорь Силаев";
+				TargetAttributes = {
+					45801D77238FC78D00BEC5EF = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 45801D73238FC78D00BEC5EF /* Build configuration list for PBXProject "KasperskyFoto" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 45801D6F238FC78D00BEC5EF;
+			productRefGroup = 45801D79238FC78D00BEC5EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45801D77238FC78D00BEC5EF /* KasperskyFoto */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45801D76238FC78D00BEC5EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45801D8B238FC79100BEC5EF /* LaunchScreen.storyboard in Resources */,
+				45801D88238FC79100BEC5EF /* Assets.xcassets in Resources */,
+				45801D83238FC78D00BEC5EF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45801D74238FC78D00BEC5EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45801D99238FDFB700BEC5EF /* NetworkDataFetcher.swift in Sources */,
+				45801DA823904A7600BEC5EF /* PhotoCollectionViewCell.swift in Sources */,
+				45801D80238FC78D00BEC5EF /* PhotoListViewController.swift in Sources */,
+				45801D7C238FC78D00BEC5EF /* AppDelegate.swift in Sources */,
+				45801D7E238FC78D00BEC5EF /* SceneDelegate.swift in Sources */,
+				45801D86238FC78D00BEC5EF /* KasperskyFoto.xcdatamodeld in Sources */,
+				45801DA62390482000BEC5EF /* PhotoCollectionView.swift in Sources */,
+				45801D98238FDFB700BEC5EF /* NetworkService.swift in Sources */,
+				45801D9C238FDFBF00BEC5EF /* SearchResults.swift in Sources */,
+				45801D94238FDF0500BEC5EF /* OnePhotoViewController.swift in Sources */,
+				45801DAC23904FA800BEC5EF /* VideoListViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		45801D81238FC78D00BEC5EF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45801D82238FC78D00BEC5EF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		45801D89238FC79100BEC5EF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45801D8A238FC79100BEC5EF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		45801D8D238FC79100BEC5EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		45801D8E238FC79100BEC5EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		45801D90238FC79100BEC5EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HT5TAF87TQ;
+				INFOPLIST_FILE = KasperskyFoto/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mycompany.KasperskyFoto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		45801D91238FC79100BEC5EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HT5TAF87TQ;
+				INFOPLIST_FILE = KasperskyFoto/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mycompany.KasperskyFoto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45801D73238FC78D00BEC5EF /* Build configuration list for PBXProject "KasperskyFoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45801D8D238FC79100BEC5EF /* Debug */,
+				45801D8E238FC79100BEC5EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45801D8F238FC79100BEC5EF /* Build configuration list for PBXNativeTarget "KasperskyFoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45801D90238FC79100BEC5EF /* Debug */,
+				45801D91238FC79100BEC5EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		45801D84238FC78D00BEC5EF /* KasperskyFoto.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				45801D85238FC78D00BEC5EF /* KasperskyFoto.xcdatamodel */,
+			);
+			currentVersion = 45801D85238FC78D00BEC5EF /* KasperskyFoto.xcdatamodel */;
+			path = KasperskyFoto.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 45801D70238FC78D00BEC5EF /* Project object */;
+}
