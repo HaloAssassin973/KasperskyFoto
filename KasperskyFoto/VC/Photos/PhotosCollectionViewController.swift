@@ -48,8 +48,8 @@ class PhotosCollectionViewController: UICollectionViewController {
     private func setupCollectionView() {
         collectionView.backgroundColor = .white
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CellId")
-        collectionView.register(PhotosCell.self, forCellWithReuseIdentifier: PhotosCell.reuseId)
+//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CellId")
+//        collectionView.register(PhotosCell.self, forCellWithReuseIdentifier: "PhotosCell")
         
         collectionView.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         collectionView.contentInsetAdjustmentBehavior = .automatic
@@ -84,7 +84,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotosCell.reuseId, for: indexPath) as! PhotosCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
         let unspashPhoto = photos[indexPath.item]
         cell.unsplashPhoto = unspashPhoto
         return cell
@@ -129,7 +129,6 @@ extension PhotosCollectionViewController: WaterfallLayoutDelegate {
     func waterfallLayout(_ layout: WaterfallLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let photo = photos[indexPath.item]
-        //        print("photo.width: \(photo.width) photo.height: \(photo.height)\n")
         return CGSize(width: photo.imageWidth, height: photo.imageHeight)
     }
 }
