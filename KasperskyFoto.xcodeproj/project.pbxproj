@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1537B7BDBF2AEA18CB39101A /* Pods_KasperskyFoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FAD1022929AA60F9968DDE /* Pods_KasperskyFoto.framework */; };
 		45801D7C238FC78D00BEC5EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D7B238FC78D00BEC5EF /* AppDelegate.swift */; };
 		45801D7E238FC78D00BEC5EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D7D238FC78D00BEC5EF /* SceneDelegate.swift */; };
-		45801D80238FC78D00BEC5EF /* PhotoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D7F238FC78D00BEC5EF /* PhotoListViewController.swift */; };
 		45801D83238FC78D00BEC5EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45801D81238FC78D00BEC5EF /* Main.storyboard */; };
 		45801D86238FC78D00BEC5EF /* KasperskyFoto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45801D84238FC78D00BEC5EF /* KasperskyFoto.xcdatamodeld */; };
 		45801D88238FC79100BEC5EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45801D87238FC79100BEC5EF /* Assets.xcassets */; };
@@ -19,10 +18,10 @@
 		45801D98238FDFB700BEC5EF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D96238FDFB700BEC5EF /* NetworkService.swift */; };
 		45801D99238FDFB700BEC5EF /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D97238FDFB700BEC5EF /* NetworkDataFetcher.swift */; };
 		45801D9C238FDFBF00BEC5EF /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801D9B238FDFBF00BEC5EF /* SearchResults.swift */; };
-		45801DA62390482000BEC5EF /* PhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801DA52390482000BEC5EF /* PhotoCollectionView.swift */; };
-		45801DA823904A7600BEC5EF /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801DA723904A7600BEC5EF /* PhotoCollectionViewCell.swift */; };
 		45801DAC23904FA800BEC5EF /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801DAB23904FA800BEC5EF /* VideoListViewController.swift */; };
 		840DDA6423943EF3008B1615 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DDA6323943EF3008B1615 /* WaterfallLayout.swift */; };
+		840DDA67239444B8008B1615 /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DDA65239444B8008B1615 /* PhotosCell.swift */; };
+		840DDA68239444B8008B1615 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DDA66239444B8008B1615 /* PhotosCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +29,6 @@
 		45801D78238FC78D00BEC5EF /* KasperskyFoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KasperskyFoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45801D7B238FC78D00BEC5EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45801D7D238FC78D00BEC5EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		45801D7F238FC78D00BEC5EF /* PhotoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewController.swift; sourceTree = "<group>"; };
 		45801D82238FC78D00BEC5EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45801D85238FC78D00BEC5EF /* KasperskyFoto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KasperskyFoto.xcdatamodel; sourceTree = "<group>"; };
 		45801D87238FC79100BEC5EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,12 +38,12 @@
 		45801D96238FDFB700BEC5EF /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		45801D97238FDFB700BEC5EF /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		45801D9B238FDFBF00BEC5EF /* SearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
-		45801DA52390482000BEC5EF /* PhotoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
-		45801DA723904A7600BEC5EF /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		45801DAB23904FA800BEC5EF /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
+		840DDA6323943EF3008B1615 /* WaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
+		840DDA65239444B8008B1615 /* PhotosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
+		840DDA66239444B8008B1615 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		9EDCA50B69916AA779C6D9D1 /* Pods-KasperskyFoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasperskyFoto.release.xcconfig"; path = "Target Support Files/Pods-KasperskyFoto/Pods-KasperskyFoto.release.xcconfig"; sourceTree = "<group>"; };
 		AF084B63C55D565FB23E6C13 /* Pods-KasperskyFoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasperskyFoto.debug.xcconfig"; path = "Target Support Files/Pods-KasperskyFoto/Pods-KasperskyFoto.debug.xcconfig"; sourceTree = "<group>"; };
-		840DDA6323943EF3008B1615 /* WaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,9 +123,8 @@
 		45801DA923904E0400BEC5EF /* Photos */ = {
 			isa = PBXGroup;
 			children = (
-				45801D7F238FC78D00BEC5EF /* PhotoListViewController.swift */,
-				45801DA52390482000BEC5EF /* PhotoCollectionView.swift */,
-				45801DA723904A7600BEC5EF /* PhotoCollectionViewCell.swift */,
+				840DDA65239444B8008B1615 /* PhotosCell.swift */,
+				840DDA66239444B8008B1615 /* PhotosCollectionViewController.swift */,
 				45801D93238FDF0500BEC5EF /* OnePhotoViewController.swift */,
 			);
 			path = Photos;
@@ -155,7 +152,6 @@
 				AF084B63C55D565FB23E6C13 /* Pods-KasperskyFoto.debug.xcconfig */,
 				9EDCA50B69916AA779C6D9D1 /* Pods-KasperskyFoto.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -275,17 +271,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				45801D99238FDFB700BEC5EF /* NetworkDataFetcher.swift in Sources */,
-				45801DA823904A7600BEC5EF /* PhotoCollectionViewCell.swift in Sources */,
-				45801D80238FC78D00BEC5EF /* PhotoListViewController.swift in Sources */,
 				45801D7C238FC78D00BEC5EF /* AppDelegate.swift in Sources */,
 				840DDA6423943EF3008B1615 /* WaterfallLayout.swift in Sources */,
 				45801D7E238FC78D00BEC5EF /* SceneDelegate.swift in Sources */,
 				45801D86238FC78D00BEC5EF /* KasperskyFoto.xcdatamodeld in Sources */,
-				45801DA62390482000BEC5EF /* PhotoCollectionView.swift in Sources */,
 				45801D98238FDFB700BEC5EF /* NetworkService.swift in Sources */,
 				45801D9C238FDFBF00BEC5EF /* SearchResults.swift in Sources */,
 				45801D94238FDF0500BEC5EF /* OnePhotoViewController.swift in Sources */,
+				840DDA67239444B8008B1615 /* PhotosCell.swift in Sources */,
 				45801DAC23904FA800BEC5EF /* VideoListViewController.swift in Sources */,
+				840DDA68239444B8008B1615 /* PhotosCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
