@@ -22,6 +22,7 @@ class VideoListViewController: UIViewController {
             seacrhController.hidesNavigationBarDuringPresentation = false
             seacrhController.obscuresBackgroundDuringPresentation = false
             seacrhController.searchBar.delegate = self as? UISearchBarDelegate
+            seacrhController.searchBar.placeholder = "Поиск видео"
         }
 
 }
