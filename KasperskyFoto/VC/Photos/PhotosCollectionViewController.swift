@@ -15,8 +15,6 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     private var photos = [Hit]()
     
-    private var selectedImages = [UIImage]()
-    
     private let enterSearchTermLabel: UILabel = {
         let label = UILabel()
         label.text = "Введите что искать"
@@ -29,14 +27,12 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         setupCollectionView()
         setupSearchBar()
         setupEnterLabel()
     }
     
     func refresh() {
-        self.selectedImages.removeAll()
         self.collectionView.selectItem(at: nil, animated: true, scrollPosition: [])
     }
     
@@ -47,14 +43,9 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     private func setupCollectionView() {
         collectionView.backgroundColor = .white
-        
-//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CellId")
-//        collectionView.register(PhotosCell.self, forCellWithReuseIdentifier: "PhotosCell")
-        
         collectionView.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         collectionView.contentInsetAdjustmentBehavior = .automatic
         collectionView.allowsMultipleSelection = true
-        
         if let waterfallLayout = collectionViewLayout as? WaterfallLayout {
             waterfallLayout.delegate = self
         }
@@ -89,22 +80,8 @@ class PhotosCollectionViewController: UICollectionViewController {
         cell.unsplashPhoto = unspashPhoto
         return cell
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! PhotosCell
-        guard let image = cell.photoImageView.image else { return }
-        selectedImages.append(image)
-        
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! PhotosCell
-        guard let image = cell.photoImageView.image else { return }
-        if let index = selectedImages.firstIndex(of: image) {
-            selectedImages.remove(at: index)
-        }
-    }
 }
+
 
 // MARK: - UISearchBarDelegate
 

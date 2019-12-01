@@ -17,14 +17,6 @@ class PhotosCell: UICollectionViewCell {
         setupPhotoImageView()
     }
     
-    private let checkmark: UIImageView = {
-        let image = UIImage(named: "bird1")
-        let imageView = UIImageView(image: image)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.alpha = 0
-        return imageView
-    }()
-    
      let photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -38,14 +30,7 @@ class PhotosCell: UICollectionViewCell {
             let photoUrl = unsplashPhoto.largeImageURL
             guard let imageUrl = photoUrl, let url = URL(string: imageUrl) else { return }
             photoImageView.sd_setImage(with: url, completed: nil)
-            
-            
         }
-    }
-        
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        photoImageView.image = nil
     }
     
     
