@@ -7,12 +7,13 @@
 //
 
 import UIKit
-
+import SDWebImage
 class OnePhotoViewController: UIViewController {
-
+    @IBOutlet weak var imageView: UIImageView!
+    var kek = "oioioioioi"
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(kek)
         // Do any additional setup after loading the view.
     }
     

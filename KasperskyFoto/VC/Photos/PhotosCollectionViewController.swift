@@ -31,7 +31,11 @@ class PhotosCollectionViewController: UICollectionViewController {
         setupSearchBar()
         setupEnterLabel()
     }
-    
+    func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if (segue.identifier == "Load View") {
+            // pass data to next view
+        }
+    }
     func refresh() {
         self.collectionView.selectItem(at: nil, animated: true, scrollPosition: [])
     }
@@ -65,7 +69,13 @@ class PhotosCollectionViewController: UICollectionViewController {
         seacrhController.obscuresBackgroundDuringPresentation = false
         seacrhController.searchBar.delegate = self
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showme"{
+            let vc = segue.destination as! OnePhotoViewController
+            vc.kek = "fdfpfpfpfp"
+        }
+
+    }
     // MARK: - UICollecionViewDataSource, UICollecionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -80,6 +90,20 @@ class PhotosCollectionViewController: UICollectionViewController {
         cell.unsplashPhoto = unspashPhoto
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! PhotosCell
+        performSegue(withIdentifier: "showme", sender: indexPath)
+//        {
+//            let destVC = UIViewController() as? OnePhotoViewController
+//            let photoUrl = cell.unsplashPhoto.largeImageURL
+//            guard let imageUrl = photoUrl, let url = URL(string: imageUrl) else { return }
+//            destVC?.imageView!.sd_setImage(with:url, completed: nil)
+//            destVC!.kek = "hui"
+//        }
+    }
+    
+    
 }
 
 
@@ -88,7 +112,6 @@ class PhotosCollectionViewController: UICollectionViewController {
 extension PhotosCollectionViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
             self.networkDataFetcher.fetchImages(searchTerm: searchText) { [weak self] (searchResults) in
