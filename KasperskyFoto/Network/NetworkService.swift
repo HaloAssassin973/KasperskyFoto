@@ -16,17 +16,10 @@ class NetworkService {
         let parameters = self.prepareParaments(searchTerm: searchTerm)
         let url = self.url(params: parameters)
         var request = URLRequest(url: url)
-        request.allHTTPHeaderFields = prepareHeader()
         request.httpMethod = "get"
         let task = createDataTask(from: request, completion: completion)
         print(url)
         task.resume()
-    }
-    
-    private func prepareHeader() -> [String: String]? {
-        var headers = [String: String]()
-        headers["Authorization"] = "Client-ID dc1bcc94279ed5b3be81b9f5b7188d01565f5e9eefad81f9fb9b805daf5dec30"
-        return headers
     }
     
     private func prepareParaments(searchTerm: String?) -> [String: String] {
