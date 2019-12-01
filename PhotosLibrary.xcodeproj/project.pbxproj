@@ -10,7 +10,6 @@
 		06C505419DB43C62FFEA791A /* Pods_PhotosLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C64AFF9C329832A872C5A8 /* Pods_PhotosLibrary.framework */; };
 		F071C1182309BD4800423E2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F071C1172309BD4800423E2D /* AppDelegate.swift */; };
 		F071C11A2309BD4800423E2D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F071C1192309BD4800423E2D /* SceneDelegate.swift */; };
-		F071C11C2309BD4800423E2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F071C11B2309BD4800423E2D /* ViewController.swift */; };
 		F071C11F2309BD4800423E2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F071C11D2309BD4800423E2D /* Main.storyboard */; };
 		F071C1212309BD4C00423E2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F071C1202309BD4C00423E2D /* Assets.xcassets */; };
 		F071C1242309BD4C00423E2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F071C1222309BD4C00423E2D /* LaunchScreen.storyboard */; };
@@ -33,7 +32,6 @@
 		F071C1142309BD4800423E2D /* PhotosLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F071C1172309BD4800423E2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F071C1192309BD4800423E2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F071C11B2309BD4800423E2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F071C11E2309BD4800423E2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F071C1202309BD4C00423E2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F071C1232309BD4C00423E2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 				F071C12B2309BDBE00423E2D /* MainTabBarController.swift */,
 				F071C1312309CB9500423E2D /* Service */,
 				F079267F230A9CC50007982A /* Photos */,
-				F071C11B2309BD4800423E2D /* ViewController.swift */,
 				F0792684230A9D490007982A /* Likes */,
 				F0792687230A9D8C0007982A /* Helpers */,
 				F071C11D2309BD4800423E2D /* Main.storyboard */,
@@ -279,7 +276,6 @@
 				F071C1332309CEDD00423E2D /* NetworkDataFetcher.swift in Sources */,
 				F0792681230A9D400007982A /* LikesCollectionViewController.swift in Sources */,
 				F0792683230A9D450007982A /* LikesCollectionViewCell.swift in Sources */,
-				F071C11C2309BD4800423E2D /* ViewController.swift in Sources */,
 				F071C1182309BD4800423E2D /* AppDelegate.swift in Sources */,
 				F071C12C2309BDBE00423E2D /* MainTabBarController.swift in Sources */,
 				F071C12E2309BE5900423E2D /* PhotosCollectionViewController.swift in Sources */,
