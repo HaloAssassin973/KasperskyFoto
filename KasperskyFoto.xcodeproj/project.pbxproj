@@ -21,6 +21,7 @@
 		45801DA62390482000BEC5EF /* PhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801DA52390482000BEC5EF /* PhotoCollectionView.swift */; };
 		45801DA823904A7600BEC5EF /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801DA723904A7600BEC5EF /* PhotoCollectionViewCell.swift */; };
 		45801DAC23904FA800BEC5EF /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45801DAB23904FA800BEC5EF /* VideoListViewController.swift */; };
+		840DDA6423943EF3008B1615 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DDA6323943EF3008B1615 /* WaterfallLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		45801DA52390482000BEC5EF /* PhotoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
 		45801DA723904A7600BEC5EF /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		45801DAB23904FA800BEC5EF /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
+		840DDA6323943EF3008B1615 /* WaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				45801D92238FDECE00BEC5EF /* VC */,
 				45801D7B238FC78D00BEC5EF /* AppDelegate.swift */,
 				45801D7D238FC78D00BEC5EF /* SceneDelegate.swift */,
+				840DDA6323943EF3008B1615 /* WaterfallLayout.swift */,
 				45801D81238FC78D00BEC5EF /* Main.storyboard */,
 				45801D87238FC79100BEC5EF /* Assets.xcassets */,
 				45801D89238FC79100BEC5EF /* LaunchScreen.storyboard */,
@@ -116,9 +119,9 @@
 			isa = PBXGroup;
 			children = (
 				45801D7F238FC78D00BEC5EF /* PhotoListViewController.swift */,
-				45801D93238FDF0500BEC5EF /* OnePhotoViewController.swift */,
 				45801DA52390482000BEC5EF /* PhotoCollectionView.swift */,
 				45801DA723904A7600BEC5EF /* PhotoCollectionViewCell.swift */,
+				45801D93238FDF0500BEC5EF /* OnePhotoViewController.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				45801DA823904A7600BEC5EF /* PhotoCollectionViewCell.swift in Sources */,
 				45801D80238FC78D00BEC5EF /* PhotoListViewController.swift in Sources */,
 				45801D7C238FC78D00BEC5EF /* AppDelegate.swift in Sources */,
+				840DDA6423943EF3008B1615 /* WaterfallLayout.swift in Sources */,
 				45801D7E238FC78D00BEC5EF /* SceneDelegate.swift in Sources */,
 				45801D86238FC78D00BEC5EF /* KasperskyFoto.xcdatamodeld in Sources */,
 				45801DA62390482000BEC5EF /* PhotoCollectionView.swift in Sources */,
