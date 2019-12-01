@@ -13,7 +13,7 @@ import SDWebImage
 class PhotosCell: UICollectionViewCell {
     
     override func awakeFromNib() {
-       super.awakeFromNib()
+        super.awakeFromNib()
         setupPhotoImageView()
     }
     
