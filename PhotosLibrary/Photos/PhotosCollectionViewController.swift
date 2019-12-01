@@ -13,7 +13,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     var networkDataFetcher = NetworkDataFetcher()
     private var timer: Timer?
     
-    private var photos = [UnsplashPhoto]()
+    private var photos = [Hit]()
     
     private var selectedImages = [UIImage]()
     
@@ -74,7 +74,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     @objc private func addBarButtonTapped() {
         print(#function)
-        let selectedPhotos = collectionView.indexPathsForSelectedItems?.reduce([], { (photosss, indexPath) -> [UnsplashPhoto] in
+        let selectedPhotos = collectionView.indexPathsForSelectedItems?.reduce([], { (photosss, indexPath) -> [Hit] in
             var mutablePhotos = photosss
             let photo = photos[indexPath.item]
             mutablePhotos.append(photo)
@@ -208,7 +208,7 @@ extension PhotosCollectionViewController: UISearchBarDelegate {
             self.networkDataFetcher.fetchImages(searchTerm: searchText) { [weak self] (searchResults) in
                 guard let fetchedPhotos = searchResults else { return }
                 self?.spinner.stopAnimating()
-                self?.photos = fetchedPhotos.results
+                self?.photos = fetchedPhotos.hits
                 self?.collectionView.reloadData()
                 self?.refresh()
             }
@@ -244,6 +244,6 @@ extension PhotosCollectionViewController: WaterfallLayoutDelegate {
         
         let photo = photos[indexPath.item]
         //        print("photo.width: \(photo.width) photo.height: \(photo.height)\n")
-        return CGSize(width: photo.width, height: photo.height)
+        return CGSize(width: photo.imageWidth, height: photo.imageHeight)
     }
 }

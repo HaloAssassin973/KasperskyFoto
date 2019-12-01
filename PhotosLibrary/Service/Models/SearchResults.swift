@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Foto: Decodable {
+struct Photo: Decodable {
     let totalHits: Int
     let hits: [Hit]
     let total: Int

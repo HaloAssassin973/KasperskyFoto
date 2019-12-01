@@ -23,9 +23,9 @@ class LikesCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    var unsplashPhoto: UnsplashPhoto! {
+    var unsplashPhoto: Hit! {
         didSet {
-            let photoUrl = unsplashPhoto.urls["regular"] // спорный момент, лично для меня
+            let photoUrl = unsplashPhoto.largeImageURL
             guard let imageUrl = photoUrl, let url = URL(string: imageUrl) else { return }
             myImageView.sd_setImage(with: url, completed: nil)
         }
@@ -52,8 +52,8 @@ class LikesCollectionViewCell: UICollectionViewCell {
         myImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
-    func set(photo: UnsplashPhoto) {
-        let photoUrl = photo.urls["full"]
+    func set(photo: Hit) {
+        let photoUrl = photo.largeImageURL
         guard let photoURL = photoUrl, let url = URL(string: photoURL) else { return }
         myImageView.sd_setImage(with: url, completed: nil)
     }

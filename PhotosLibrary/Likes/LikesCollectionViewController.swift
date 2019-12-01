@@ -10,7 +10,7 @@ import UIKit
 
 class LikesCollectionViewController: UICollectionViewController {
     
-    var photos = [UnsplashPhoto]()
+    var photos = [Hit]()
     
     private lazy var trashBarButtonItem: UIBarButtonItem = {
         return UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: nil)
