@@ -1,9 +1,9 @@
 //
 //  PhotosCell.swift
-//  PhotosLibrary
+//  KasperskyFoto
 //
-//  Created by Алексей Пархоменко on 18/08/2019.
-//  Copyright © 2019 Алексей Пархоменко. All rights reserved.
+//  Created by Игорь Силаев on 28/11/2019.
+//  Copyright © 2019 Игорь Силаев. All rights reserved.
 //
 
 import UIKit
