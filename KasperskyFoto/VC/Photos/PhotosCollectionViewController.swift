@@ -15,21 +15,16 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     private var photos = [Hit]()
     
-    private let enterSearchTermLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Введите что искать"
-        
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         setupSearchBar()
-        setupEnterLabel()
+        networkDataFetcher.fetchImages(searchTerm: "") { [weak self] (searchResults) in
+            guard let fetchedPhotos = searchResults else { return }
+            self?.photos = fetchedPhotos.hits
+            self?.collectionView.reloadData()
+            self?.refresh()
+        }
     }
     
     func refresh() {
@@ -51,12 +46,6 @@ class PhotosCollectionViewController: UICollectionViewController {
         }
     }
     
-    private func setupEnterLabel() {
-        collectionView.addSubview(enterSearchTermLabel)
-        enterSearchTermLabel.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true
-        enterSearchTermLabel.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 50).isActive = true
-    }
-    
     private func setupSearchBar() {
         let seacrhController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = seacrhController
@@ -64,12 +53,12 @@ class PhotosCollectionViewController: UICollectionViewController {
         seacrhController.hidesNavigationBarDuringPresentation = false
         seacrhController.obscuresBackgroundDuringPresentation = false
         seacrhController.searchBar.delegate = self
+        seacrhController.searchBar.placeholder = "Поиск фото"
     }
     
     // MARK: - UICollecionViewDataSource, UICollecionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        enterSearchTermLabel.isHidden = photos.count != 0
         return photos.count
     }
     
@@ -81,7 +70,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         return cell
     }
 }
-
+    
 
 // MARK: - UISearchBarDelegate
 

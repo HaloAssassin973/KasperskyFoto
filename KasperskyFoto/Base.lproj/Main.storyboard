@@ -131,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="4774" y="139"/>
         </scene>
-        <!--Photos Collection View Controller-->
+        <!--Лента фотографий-->
         <scene sceneID="bSE-Ai-6dC">
             <objects>
                 <collectionViewController id="khg-Xx-pBR" customClass="PhotosCollectionViewController" customModule="KasperskyFoto" customModuleProvider="target" sceneMemberID="viewController">
@@ -163,7 +163,7 @@
                             <outlet property="delegate" destination="khg-Xx-pBR" id="tRC-Uz-5S0"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="deO-Mx-ASO"/>
+                    <navigationItem key="navigationItem" title="Лента фотографий" id="deO-Mx-ASO"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WnI-xd-TZJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
