@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QYM-xG-dff">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QYM-xG-dff">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -176,7 +177,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="deO-Mx-ASO"/>
                     <connections>
-                        <segue destination="oLf-sn-gIG" kind="show" identifier="showme" id="wc0-fN-pnq"/>
+                        <segue destination="oLf-sn-gIG" kind="show" identifier="showme" id="Zcn-ow-B08"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WnI-xd-TZJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -204,7 +205,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="photo" catalog="system" width="64" height="46"/>
+        <image name="photo" catalog="system" width="64" height="48"/>
         <image name="video" catalog="system" width="64" height="40"/>
     </resources>
 </document>

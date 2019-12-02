@@ -13,8 +13,11 @@ class OnePhotoViewController: UIViewController {
     var kek = "oioioioioi"
     override func viewDidLoad() {
         super.viewDidLoad()
+        let photoUrl = kek
+        let imageUrl = photoUrl
+        let url = URL(string: imageUrl)
+        imageView!.sd_setImage(with: url, completed: nil)
         print(kek)
-        // Do any additional setup after loading the view.
     }
     
 

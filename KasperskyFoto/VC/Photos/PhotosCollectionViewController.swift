@@ -60,9 +60,12 @@ class PhotosCollectionViewController: UICollectionViewController {
         seacrhController.searchBar.placeholder = "Поиск фото"
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showme"{
-            let vc = segue.destination as! OnePhotoViewController
-            vc.kek = "fdfpfpfpfp"
+        let indexPath = sender as! IndexPath
+        let cell = collectionView.cellForItem(at: indexPath) as! PhotosCell
+        let vc = segue.destination as! OnePhotoViewController
+        let url = photos[indexPath.row].largeImageURL!
+        if segue.identifier == "showme" {
+            vc.kek = photos[indexPath.row].largeImageURL!
         }
 
     }
@@ -81,7 +84,6 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! PhotosCell
         performSegue(withIdentifier: "showme", sender: indexPath)
 //        {
 //            let destVC = UIViewController() as? OnePhotoViewController
