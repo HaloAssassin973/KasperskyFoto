@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QYM-xG-dff">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QYM-xG-dff">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -146,7 +146,7 @@
             </objects>
             <point key="canvasLocation" x="4774" y="139"/>
         </scene>
-        <!--Photos Collection View Controller-->
+        <!--Лента фотографий-->
         <scene sceneID="bSE-Ai-6dC">
             <objects>
                 <collectionViewController id="khg-Xx-pBR" customClass="PhotosCollectionViewController" customModule="KasperskyFoto" customModuleProvider="target" sceneMemberID="viewController">
@@ -175,7 +175,7 @@
                             <outlet property="delegate" destination="khg-Xx-pBR" id="tRC-Uz-5S0"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="deO-Mx-ASO"/>
+                    <navigationItem key="navigationItem" title="Лента фотографий" id="deO-Mx-ASO"/>
                     <connections>
                         <segue destination="oLf-sn-gIG" kind="show" identifier="showme" id="Zcn-ow-B08"/>
                     </connections>
@@ -205,7 +205,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="photo" catalog="system" width="64" height="48"/>
+        <image name="photo" catalog="system" width="64" height="46"/>
         <image name="video" catalog="system" width="64" height="40"/>
     </resources>
 </document>
