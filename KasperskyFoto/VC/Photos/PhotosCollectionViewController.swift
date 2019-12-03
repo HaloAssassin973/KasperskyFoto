@@ -65,7 +65,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         let vc = segue.destination as! OnePhotoViewController
         let url = photos[indexPath.row].largeImageURL!
         if segue.identifier == "showme" {
-            vc.kek = photos[indexPath.row].largeImageURL!
+            vc.photoUrl = photos[indexPath.row].largeImageURL!
         }
 
     }

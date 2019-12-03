@@ -10,14 +10,11 @@ import UIKit
 import SDWebImage
 class OnePhotoViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
-    var kek = "oioioioioi"
+    var photoUrl = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        let photoUrl = kek
-        let imageUrl = photoUrl
-        let url = URL(string: imageUrl)
+        let url = URL(string: photoUrl)
         imageView!.sd_setImage(with: url, completed: nil)
-        print(kek)
     }
     
 
