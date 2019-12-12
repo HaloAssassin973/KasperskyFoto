@@ -23,21 +23,9 @@ class PhotosCollectionViewController: UICollectionViewController {
             guard let fetchedPhotos = searchResults else { return }
             self?.photos = fetchedPhotos.hits
             self?.collectionView.reloadData()
-            self?.refresh()
         }
     }
-    func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if (segue.identifier == "Load View") {
-            // pass data to next view
-        }
-    }
-    func refresh() {
-        self.collectionView.selectItem(at: nil, animated: true, scrollPosition: [])
-    }
-    
-    // MARK: - NavigationItems action
-    
-    
+
     // MARK: - Setup UI Elements
     
     private func setupCollectionView() {
@@ -61,11 +49,10 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let indexPath = sender as! IndexPath
-        let cell = collectionView.cellForItem(at: indexPath) as! PhotosCell
         let vc = segue.destination as! OnePhotoViewController
         let url = photos[indexPath.row].largeImageURL!
         if segue.identifier == "showme" {
-            vc.photoUrl = photos[indexPath.row].largeImageURL!
+            vc.photoUrl = url
         }
 
     }
@@ -85,13 +72,6 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showme", sender: indexPath)
-//        {
-//            let destVC = UIViewController() as? OnePhotoViewController
-//            let photoUrl = cell.unsplashPhoto.largeImageURL
-//            guard let imageUrl = photoUrl, let url = URL(string: imageUrl) else { return }
-//            destVC?.imageView!.sd_setImage(with:url, completed: nil)
-//            destVC!.kek = "hui"
-//        }
     }
     
     
@@ -109,7 +89,7 @@ extension PhotosCollectionViewController: UISearchBarDelegate {
                 guard let fetchedPhotos = searchResults else { return }
                 self?.photos = fetchedPhotos.hits
                 self?.collectionView.reloadData()
-                self?.refresh()
+
             }
         })
     }
@@ -120,6 +100,6 @@ extension PhotosCollectionViewController: WaterfallLayoutDelegate {
     func waterfallLayout(_ layout: WaterfallLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let photo = photos[indexPath.item]
-        return CGSize(width: photo.imageWidth, height: photo.imageHeight)
+        return CGSize(width: photo.webformatWidth, height: photo.webformatHeight)
     }
 }

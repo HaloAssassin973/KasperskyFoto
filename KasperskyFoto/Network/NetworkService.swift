@@ -10,15 +10,12 @@ import Foundation
 
 class NetworkService {
     
-    // построение запроса данных по URL
-    func request(searchTerm: String, completion: @escaping (Data?, Error?) -> Void)  {
-        
+    func request(searchTerm: String, completion: @escaping (Data?, Error?) -> Void)  {        
         let parameters = self.prepareParaments(searchTerm: searchTerm)
         let url = self.url(params: parameters)
         var request = URLRequest(url: url)
         request.httpMethod = "get"
         let task = createDataTask(from: request, completion: completion)
-        print(url)
         task.resume()
     }
     
