@@ -9,14 +9,14 @@
 import Foundation
 
 // MARK: - MediaObject
-struct MediaObject: Decodable {
+struct MediaObject: Codable {
     let totalHits: Int?
     let hits: [Hit]
     let total: Int?
 }
 
 // MARK: - Hit
-struct Hit: Decodable {
+struct Hit: Codable {
     let largeImageURL: String?
     let webformatHeight, webformatWidth, likes, imageWidth: Int?
     let id, userID, views, comments: Int?
@@ -44,12 +44,12 @@ struct Hit: Decodable {
 }
 
 // MARK: - Videos
-struct Videos: Decodable {
+struct Videos: Codable {
     let large, small, medium, tiny: Large?
 }
 
 // MARK: - Large
-struct Large: Decodable {
+struct Large: Codable {
     let url: String?
     let width, size, height: Int?
 }
