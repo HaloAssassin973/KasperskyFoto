@@ -8,21 +8,33 @@
 
 import UIKit
 
-class VideoListViewController: UIViewController {
+class VideoListViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSearchBar()
+//        setupCollectionView()
+//        setupSearchBar()
         }
-        
-        private func setupSearchBar() {
-            let seacrhController = UISearchController(searchResultsController: nil)
-            navigationItem.searchController = seacrhController
-            navigationItem.hidesSearchBarWhenScrolling = false
-            seacrhController.hidesNavigationBarDuringPresentation = false
-            seacrhController.obscuresBackgroundDuringPresentation = false
-            seacrhController.searchBar.delegate = self as? UISearchBarDelegate
-            seacrhController.searchBar.placeholder = "Поиск видео"
-        }
+    
+//    private func setupCollectionView() {
+//        collectionView.backgroundColor = .white
+//        collectionView.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+//        collectionView.contentInsetAdjustmentBehavior = .automatic
+//        collectionView.allowsMultipleSelection = true
+//        if let waterfallLayout = collectionViewLayout as? WaterfallLayout {
+//            waterfallLayout.delegate = self
+//        }
+//    }
+//
+//    private func setupSearchBar() {
+//        self.definesPresentationContext = true
+//        let seacrhController = UISearchController(searchResultsController: nil)
+//        navigationItem.searchController = seacrhController
+//        navigationItem.hidesSearchBarWhenScrolling = false
+//        seacrhController.hidesNavigationBarDuringPresentation = false
+//        seacrhController.obscuresBackgroundDuringPresentation = false
+//        seacrhController.searchBar.delegate = self
+//        seacrhController.searchBar.placeholder = "Поиск фото"
+//    }
 
 }

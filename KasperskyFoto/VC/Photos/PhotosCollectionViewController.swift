@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class PhotosCollectionViewController: UICollectionViewController {
     
     var networkDataFetcher = NetworkDataFetcher()
-    private var timer: Timer?
+    var timer: Timer?
     
-    private var photos = [Hit]()
+    var photos = [Hit]()
+    var largeURLs = [NSManagedObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     private func setupSearchBar() {
+        self.definesPresentationContext = true
         let seacrhController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = seacrhController
         navigationItem.hidesSearchBarWhenScrolling = false
@@ -47,6 +50,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         seacrhController.searchBar.delegate = self
         seacrhController.searchBar.placeholder = "Поиск фото"
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let indexPath = sender as! IndexPath
         let vc = segue.destination as! OnePhotoViewController
@@ -65,8 +69,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
-        let unspashPhoto = photos[indexPath.item]
-        cell.unsplashPhoto = unspashPhoto
+        cell.photo = photos[indexPath.item]
         return cell
     }
     

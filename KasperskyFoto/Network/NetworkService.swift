@@ -25,6 +25,8 @@ class NetworkService {
         parameters["key"] = "14440344-8ea717118a9d30883a3aa8edd"
         parameters["image_type"] = "photo"
         parameters["order"] = "latest"
+        //Количество фоток, по дефолту 20
+//        parameters["per_page"] = "50"
         return parameters
     }
     
