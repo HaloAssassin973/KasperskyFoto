@@ -10,12 +10,12 @@ import AVKit
 
 class VideoPlayer: AVPlayerViewController {
     
+    var timer: Timer?
+    var videoURL = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: "https://player.vimeo.com/external/328940142.hd.mp4?s=1ea57040d1487a6c9d9ca9ca65763c8972e66bd4&profile_id=174")!
-        self.player = AVPlayer(url: url)
-        self.player?.play()
+        let url = URL(string: videoURL)
+        self.player = AVPlayer(url: url!) 
     }
-    
-    
 }

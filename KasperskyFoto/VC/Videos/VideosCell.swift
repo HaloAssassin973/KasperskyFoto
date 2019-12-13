@@ -26,7 +26,6 @@ class VideosCell: UICollectionViewCell {
     
     var video: Hit? {
         didSet {
-            print(video)
             let videoUrl = "https://i.vimeocdn.com/video/\(video?.pictureID ?? "773604276")_200x150.jpg"
             let url = URL(string: videoUrl)
             photoImageView.sd_setImage(with: url, completed: nil)

@@ -9,15 +9,19 @@
 import UIKit
 import SDWebImage
 
-class OnePhotoViewController: UIViewController {
+class OnePhotoViewController: UIViewController, UIScrollViewDelegate {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
-    var photoUrl = ""
+    var photoURL = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: photoUrl)
+        let url = URL(string: photoURL)
         imageView!.sd_setImage(with: url, completed: nil)
     }
-
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
 }

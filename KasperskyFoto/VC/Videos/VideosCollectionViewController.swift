@@ -19,7 +19,7 @@ class VideosCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         setupCollectionView()
         setupSearchBar()
-        networkDataFetcher.fetchMediaObjects(searchTerm: "") { [weak self] (searchResults) in
+        networkDataFetcher.fetchVideos(searchTerm: "") { [weak self] (searchResults) in
             guard let fetchedVideos = searchResults else { return }
             self?.videos = fetchedVideos.hits
             self?.collectionView.reloadData()
@@ -48,14 +48,14 @@ class VideosCollectionViewController: UICollectionViewController {
         seacrhController.searchBar.placeholder = "Поиск видео"
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let indexPath = sender as! IndexPath
-//        let vc = segue.destination as! OnePhotoViewController
-//        let url = videos[indexPath.row].largeImageURL!
-//        if segue.identifier == "showVideo" {
-//            vc.photoUrl = url
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let indexPath = sender as! IndexPath
+        let vc = segue.destination as! VideoPlayer
+        let url = videos[indexPath.row].videos?.tiny?.url
+        if segue.identifier == "showVideo" {
+            vc.videoURL = url!
+        }
+    }
 
 
     // MARK: - UICollecionViewDataSource, UICollecionViewDelegate
@@ -83,7 +83,7 @@ extension VideosCollectionViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
-            self.networkDataFetcher.fetchMediaObjects(searchTerm: "") { [weak self] (searchResults) in
+            self.networkDataFetcher.fetchVideos(searchTerm: searchText) { [weak self] (searchResults) in
                 guard let fetchedVideos = searchResults else { return }
                 self?.videos = fetchedVideos.hits
                 self?.collectionView.reloadData()

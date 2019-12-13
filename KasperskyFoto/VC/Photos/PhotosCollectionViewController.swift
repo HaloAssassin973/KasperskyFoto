@@ -20,7 +20,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         setupCollectionView()
         setupSearchBar()
-        networkDataFetcher.fetchMediaObjects(searchTerm: "") { [weak self] (searchResults) in
+        networkDataFetcher.fetchPhotos(searchTerm: "") { [weak self] (searchResults) in
             guard let fetchedPhotos = searchResults else { return }
             self?.photos = fetchedPhotos.hits
             self?.collectionView.reloadData()
@@ -55,7 +55,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         let vc = segue.destination as! OnePhotoViewController
         let url = photos[indexPath.row].largeImageURL!
         if segue.identifier == "showPhoto" {
-            vc.photoUrl = url
+            vc.photoURL = url
         }
     }
     
@@ -86,11 +86,10 @@ extension PhotosCollectionViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
-            self.networkDataFetcher.fetchMediaObjects(searchTerm: searchText) { [weak self] (searchResults) in
+            self.networkDataFetcher.fetchPhotos(searchTerm: searchText) { [weak self] (searchResults) in
                 guard let fetchedPhotos = searchResults else { return }
                 self?.photos = fetchedPhotos.hits
                 self?.collectionView.reloadData()
-
             }
         })
     }
