@@ -1,16 +1,15 @@
 //
-//  PhotosCell.swift
+//  VideosCell.swift
 //  KasperskyFoto
 //
-//  Created by Игорь Силаев on 28/11/2019.
+//  Created by Игорь Силаев on 13/12/2019.
 //  Copyright © 2019 Игорь Силаев. All rights reserved.
 //
 
 import UIKit
 import SDWebImage
 
-
-class PhotosCell: UICollectionViewCell {
+class VideosCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,10 +24,11 @@ class PhotosCell: UICollectionViewCell {
         return imageView
     }()
     
-    var photo: Hit! {
+    var video: Hit? {
         didSet {
-            let photoUrl = photo.webformatURL!
-            let url = URL(string: photoUrl)
+            print(video)
+            let videoUrl = "https://i.vimeocdn.com/video/\(video?.pictureID ?? "773604276")_200x150.jpg"
+            let url = URL(string: videoUrl)
             photoImageView.sd_setImage(with: url, completed: nil)
         }
     }
@@ -42,5 +42,4 @@ class PhotosCell: UICollectionViewCell {
         photoImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         
     }
-    
 }

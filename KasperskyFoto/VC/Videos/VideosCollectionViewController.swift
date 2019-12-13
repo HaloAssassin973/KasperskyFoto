@@ -1,32 +1,30 @@
 //
-//  PhotosCollectionViewController.swift
+//  VideosCollectionViewController.swift
 //  KasperskyFoto
 //
-//  Created by Игорь Силаев on 28/11/2019.
+//  Created by Игорь Силаев on 13/12/2019.
 //  Copyright © 2019 Игорь Силаев. All rights reserved.
 //
 
 import UIKit
 
-class PhotosCollectionViewController: UICollectionViewController {
-    
+class VideosCollectionViewController: UICollectionViewController {
+
     var networkDataFetcher = NetworkDataFetcher()
     var timer: Timer?
     
-    var photos = [Hit]()
-
+    var videos = [Hit]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         setupSearchBar()
         networkDataFetcher.fetchMediaObjects(searchTerm: "") { [weak self] (searchResults) in
-            guard let fetchedPhotos = searchResults else { return }
-            self?.photos = fetchedPhotos.hits
+            guard let fetchedVideos = searchResults else { return }
+            self?.videos = fetchedVideos.hits
             self?.collectionView.reloadData()
         }
     }
-
     // MARK: - Setup UI Elements
     
     private func setupCollectionView() {
@@ -47,60 +45,56 @@ class PhotosCollectionViewController: UICollectionViewController {
         seacrhController.hidesNavigationBarDuringPresentation = false
         seacrhController.obscuresBackgroundDuringPresentation = false
         seacrhController.searchBar.delegate = self
-        seacrhController.searchBar.placeholder = "Поиск фото"
+        seacrhController.searchBar.placeholder = "Поиск видео"
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let indexPath = sender as! IndexPath
-        let vc = segue.destination as! OnePhotoViewController
-        let url = photos[indexPath.row].largeImageURL!
-        if segue.identifier == "showPhoto" {
-            vc.photoUrl = url
-        }
-    }
-    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let indexPath = sender as! IndexPath
+//        let vc = segue.destination as! OnePhotoViewController
+//        let url = videos[indexPath.row].largeImageURL!
+//        if segue.identifier == "showVideo" {
+//            vc.photoUrl = url
+//        }
+//    }
+
+
     // MARK: - UICollecionViewDataSource, UICollecionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count
+        return videos.count
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
-        cell.photo = photos[indexPath.item]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideosCell", for: indexPath) as! VideosCell
+        cell.video = videos[indexPath.item]
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showPhoto", sender: indexPath)
+        performSegue(withIdentifier: "showVideo", sender: indexPath)
     }
-    
 }
-    
 
 // MARK: - UISearchBarDelegate
 
-extension PhotosCollectionViewController: UISearchBarDelegate {
+extension VideosCollectionViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
-            self.networkDataFetcher.fetchMediaObjects(searchTerm: searchText) { [weak self] (searchResults) in
-                guard let fetchedPhotos = searchResults else { return }
-                self?.photos = fetchedPhotos.hits
+            self.networkDataFetcher.fetchMediaObjects(searchTerm: "") { [weak self] (searchResults) in
+                guard let fetchedVideos = searchResults else { return }
+                self?.videos = fetchedVideos.hits
                 self?.collectionView.reloadData()
-
             }
         })
     }
 }
 
 // MARK: - WaterfallLayoutDelegate
-extension PhotosCollectionViewController: WaterfallLayoutDelegate {
+extension VideosCollectionViewController: WaterfallLayoutDelegate {
     func waterfallLayout(_ layout: WaterfallLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let photo = photos[indexPath.item]
-        return CGSize(width: photo.webformatWidth!, height: photo.webformatHeight!)
+        return CGSize(width: 200, height: 150)
     }
 }

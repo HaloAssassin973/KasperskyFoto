@@ -8,32 +8,48 @@
 
 import Foundation
 
-// MARK: - Foto
-struct Foto: Decodable {
-    let totalHits: Int
+// MARK: - MediaObject
+struct MediaObject: Decodable {
+    let totalHits: Int?
     let hits: [Hit]
-    let total: Int
+    let total: Int?
 }
 
 // MARK: - Hit
 struct Hit: Decodable {
     let largeImageURL: String?
-    let webformatHeight, webformatWidth, likes, imageWidth: Int
-    let id, userID, views, comments: Int
-    let pageURL: String
-    let imageHeight: Int
-    let webformatURL: String
-    let type: String
-    let previewHeight: Int
-    let tags: String
-    let downloads: Int
-    let user: String
-    let favorites, imageSize, previewWidth: Int
-    let userImageURL, previewURL: String
+    let webformatHeight, webformatWidth, likes, imageWidth: Int?
+    let id, userID, views, comments: Int?
+    let pageURL: String?
+    let imageHeight: Int?
+    let webformatURL: String?
+    let type: String?
+    let previewHeight: Int?
+    let tags: String?
+    let downloads: Int?
+    let user: String?
+    let favorites, imageSize, previewWidth: Int?
+    let userImageURL, previewURL: String?
+    let pictureID: String?
+    let videos: Videos?
+    let duration: Int?
 
     enum CodingKeys: String, CodingKey {
+        case pictureID = "picture_id"
+        case videos, duration
         case largeImageURL, webformatHeight, webformatWidth, likes, imageWidth, id
         case userID = "user_id"
         case views, comments, pageURL, imageHeight, webformatURL, type, previewHeight, tags, downloads, user, favorites, imageSize, previewWidth, userImageURL, previewURL
     }
+}
+
+// MARK: - Videos
+struct Videos: Decodable {
+    let large, small, medium, tiny: Large?
+}
+
+// MARK: - Large
+struct Large: Decodable {
+    let url: String?
+    let width, size, height: Int?
 }

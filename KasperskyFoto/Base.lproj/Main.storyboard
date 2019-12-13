@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QYM-xG-dff">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QYM-xG-dff">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,73 +39,13 @@
             </objects>
             <point key="canvasLocation" x="6775" y="139"/>
         </scene>
-        <!--Лента видео-->
-        <scene sceneID="6D2-oX-82f">
+        <!--AV Player View Controller-->
+        <scene sceneID="pI9-Nc-roX">
             <objects>
-                <viewController id="2WA-IC-qeR" customClass="VideoListViewController" customModule="KasperskyFoto" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Y16-Tu-vgd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dTP-yX-yoM">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8Q5-rt-PXY">
-                                    <size key="itemSize" width="261" height="192"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="N5z-u8-isF">
-                                        <rect key="frame" x="10" y="10" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rrn-oB-HAf">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zhf-Tz-uD0">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="zhf-Tz-uD0" secondAttribute="trailing" id="Xla-ol-jHj"/>
-                                                <constraint firstItem="zhf-Tz-uD0" firstAttribute="top" secondItem="rrn-oB-HAf" secondAttribute="top" id="fhg-XD-CJa"/>
-                                                <constraint firstAttribute="bottom" secondItem="zhf-Tz-uD0" secondAttribute="bottom" id="iPK-cz-ltd"/>
-                                                <constraint firstItem="zhf-Tz-uD0" firstAttribute="leading" secondItem="rrn-oB-HAf" secondAttribute="leading" id="jPq-ZG-Gk9"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="50" height="50"/>
-                                        <connections>
-                                            <segue destination="b8c-Sf-bcM" kind="show" id="hHc-MV-i7X"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="gcL-T3-VHf"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Лента видео" id="6QG-nk-dnF"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bzF-rR-v6r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5695.652173913044" y="839.73214285714278"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="mea-DF-gHt">
-            <objects>
-                <viewController id="b8c-Sf-bcM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="o78-SH-hEh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="dzW-bw-VvS"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="eex-sy-SdD"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LQs-MY-4rV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="TSd-VD-C04" customClass="VideoPlayer" customModule="KasperskyFoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="MDA-tv-R5p"/>
+                </avPlayerViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yTV-xU-g2v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6774" y="840"/>
         </scene>
@@ -177,7 +117,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Лента фотографий" id="deO-Mx-ASO"/>
                     <connections>
-                        <segue destination="oLf-sn-gIG" kind="show" identifier="showme" id="Zcn-ow-B08"/>
+                        <segue destination="oLf-sn-gIG" kind="show" identifier="showPhoto" id="Zcn-ow-B08"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WnI-xd-TZJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -196,12 +136,50 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2WA-IC-qeR" kind="relationship" relationship="rootViewController" id="5fs-mf-hQJ"/>
+                        <segue destination="WPm-Wf-UuK" kind="relationship" relationship="rootViewController" id="x8z-dG-Tkq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C0v-FG-bH9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4774" y="840"/>
+        </scene>
+        <!--Лента видео-->
+        <scene sceneID="frf-de-GEp">
+            <objects>
+                <collectionViewController id="WPm-Wf-UuK" customClass="VideosCollectionViewController" customModule="KasperskyFoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Wk5-eY-K4n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H4o-3g-Zro" customClass="WaterfallLayout" customModule="KasperskyFoto" customModuleProvider="target">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideosCell" id="ACD-fs-93V" customClass="VideosCell" customModule="KasperskyFoto" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2Hq-D0-hif">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="WPm-Wf-UuK" id="oqT-em-j5L"/>
+                            <outlet property="delegate" destination="WPm-Wf-UuK" id="nhL-Sj-6Bv"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Лента видео" id="QMg-IB-ZoA"/>
+                    <connections>
+                        <segue destination="TSd-VD-C04" kind="show" identifier="showVideo" id="Gyz-gH-s8B"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aZj-cv-ncr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5732" y="840"/>
         </scene>
     </scenes>
     <resources>

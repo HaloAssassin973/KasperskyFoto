@@ -13,14 +13,14 @@ class NetworkDataFetcher {
     
     var networkService = NetworkService()
     
-    func fetchImages(searchTerm: String, completion: @escaping (Foto?) -> ()) {
+    func fetchMediaObjects(searchTerm: String, completion: @escaping (MediaObject?) -> ()) {
         networkService.request(searchTerm: searchTerm) { (data, error) in
             if let error = error {
                 print("Error received requesting data: \(error.localizedDescription)")
                 completion(nil)
             }
             
-            let decode = self.decodeJSON(type: Foto.self, from: data)
+            let decode = self.decodeJSON(type: MediaObject.self, from: data)
             completion(decode)
         }
     }
