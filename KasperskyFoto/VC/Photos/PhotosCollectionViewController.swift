@@ -68,11 +68,9 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
-        //cell.photo = photos[indexPath.item]
-        let image1 = SDImageCache.shared.imageFromMemoryCache(forKey: SDImageCache.shared.diskCachePath)
-        cell.photoImageView.image = image1
-        print(SDImageCache.shared.diskCachePath)
-
+        let url = URL(string: photos[indexPath.row].webformatURL!)
+        cell.photoImageView.sd_setImage(with: url, completed: nil)
+        print(SDImageCache.shared.imageFromCache(forKey: photos[indexPath.row].webformatURL!))
         return cell
     }
     
@@ -93,8 +91,7 @@ extension PhotosCollectionViewController: UISearchBarDelegate {
             self.networkDataFetcher.fetchPhotos(searchTerm: searchText) { [weak self] (searchResults) in
                 guard let fetchedPhotos = searchResults else { return }
                 self?.photos = fetchedPhotos.hits
-                self?.collectionView.reloadData()
-                SDImageCache.shared.clearDisk(onCompletion: nil)
+                self?.collectionView.reloadData() 
             }
         })
     }
@@ -107,5 +104,6 @@ extension PhotosCollectionViewController: WaterfallLayoutDelegate {
         
         let photo = photos[indexPath.item]
         return CGSize(width: photo.webformatWidth!, height: photo.webformatHeight!)
+//        return CGSize(width: 100, height: 100)
     }
 }

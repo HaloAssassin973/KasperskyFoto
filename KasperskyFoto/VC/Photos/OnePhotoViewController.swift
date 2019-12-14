@@ -23,7 +23,7 @@ class OnePhotoViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let url = URL(string: photoURL)
-        imageView!.sd_setImage(with: url, completed: nil)
+        imageView!.sd_setImage(with: url, placeholderImage: UIImage(), options: [.progressiveLoad, .highPriority], completed: nil)
     }
     
     

@@ -10,7 +10,6 @@ import AVKit
 
 class VideoPlayer: AVPlayerViewController {
     
-    var timer: Timer?
     var videoURL = ""
     
     override func viewDidLoad() {

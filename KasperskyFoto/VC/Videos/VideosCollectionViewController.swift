@@ -67,7 +67,8 @@ class VideosCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideosCell", for: indexPath) as! VideosCell
-        cell.video = videos[indexPath.item]
+        let url = URL(string: "https://i.vimeocdn.com/video/\(videos[indexPath.row].pictureID ?? "773604276")_200x150.jpg")
+        cell.videoImageView.sd_setImage(with: url, completed: nil)
         return cell
     }
     
