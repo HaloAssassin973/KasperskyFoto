@@ -72,7 +72,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         let image1 = SDImageCache.shared.imageFromMemoryCache(forKey: SDImageCache.shared.diskCachePath)
         cell.photoImageView.image = image1
         print(SDImageCache.shared.diskCachePath)
-        
+
         return cell
     }
     
