@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PhotosCollectionViewController: UICollectionViewController {
-    
     var networkDataFetcher = NetworkDataFetcher()
     var timer: Timer?
     
@@ -69,6 +69,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
         cell.photo = photos[indexPath.item]
+        print(SDImageCache.shared.diskCachePath)
         return cell
     }
     
@@ -90,9 +91,11 @@ extension PhotosCollectionViewController: UISearchBarDelegate {
                 guard let fetchedPhotos = searchResults else { return }
                 self?.photos = fetchedPhotos.hits
                 self?.collectionView.reloadData()
+                SDImageCache.shared.clearDisk(onCompletion: nil)
             }
         })
     }
+    
 }
 
 // MARK: - WaterfallLayoutDelegate
