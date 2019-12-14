@@ -30,6 +30,7 @@ class OnePhotoViewController: UIViewController, UIScrollViewDelegate {
     override func viewWillLayoutSubviews() {
       super.viewWillLayoutSubviews()
       updateMinZoomScaleForSize(view.bounds.size)
+        
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
@@ -41,8 +42,8 @@ class OnePhotoViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func updateMinZoomScaleForSize(_ size: CGSize) {
-      let widthScale = size.width / imageView.bounds.width
-      let heightScale = size.height / imageView.bounds.height
+      let widthScale = size.width / (imageView.image?.size.width ?? 0)
+      let heightScale = size.height / (imageView.image?.size.height ?? 0)
       let minScale = min(widthScale, heightScale)
 
       scrollView.minimumZoomScale = minScale
@@ -50,11 +51,11 @@ class OnePhotoViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func updateConstraintsForSize(_ size: CGSize) {
-      let yOffset = max(0, (size.height - imageView.frame.height) / 2)
+      let yOffset = max(0, (size.height - (imageView.image?.size.height ?? 0)) / 2)
       topConstraint.constant = yOffset
       bottomConstraint.constant = yOffset
       
-      let xOffset = max(0, (size.width - imageView.frame.width) / 2)
+      let xOffset = max(0, (size.width - (imageView.image?.size.width ?? 0)) / 2)
       leadingConstraint.constant = xOffset
       trailingConstraint.constant = xOffset
         

@@ -69,7 +69,6 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
         cell.photo = photos[indexPath.item]
-        print(SDImageCache.shared.diskCachePath)
         return cell
     }
     
