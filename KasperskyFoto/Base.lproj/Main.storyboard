@@ -17,18 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" contentInsetAdjustmentBehavior="never" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="Mjg-Ha-IQz">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjg-Ha-IQz">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5yA-i2-3Ke">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5yA-i2-3Ke">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="W3N-UO-D4I" firstAttribute="trailing" secondItem="5yA-i2-3Ke" secondAttribute="trailing" id="0nY-6x-UWK"/>
-                                    <constraint firstItem="5yA-i2-3Ke" firstAttribute="leading" secondItem="W3N-UO-D4I" secondAttribute="leading" id="1r5-SF-7wX"/>
-                                    <constraint firstItem="W3N-UO-D4I" firstAttribute="bottom" secondItem="5yA-i2-3Ke" secondAttribute="bottom" id="3RF-KB-5XJ"/>
-                                    <constraint firstItem="5yA-i2-3Ke" firstAttribute="top" secondItem="W3N-UO-D4I" secondAttribute="top" id="HCd-LQ-ig2"/>
+                                    <constraint firstItem="5yA-i2-3Ke" firstAttribute="leading" secondItem="Mjg-Ha-IQz" secondAttribute="leading" id="Ow6-gi-rP8"/>
+                                    <constraint firstItem="5yA-i2-3Ke" firstAttribute="trailing" secondItem="Mjg-Ha-IQz" secondAttribute="trailing" id="QnZ-oK-7xL"/>
+                                    <constraint firstItem="5yA-i2-3Ke" firstAttribute="bottom" secondItem="Mjg-Ha-IQz" secondAttribute="bottom" id="k3Z-Cz-Uab"/>
+                                    <constraint firstItem="5yA-i2-3Ke" firstAttribute="top" secondItem="Mjg-Ha-IQz" secondAttribute="top" id="rpn-wb-lJT"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="W2N-Kx-tCO"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="W3N-UO-D4I"/>
@@ -39,17 +39,21 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Mjg-Ha-IQz" firstAttribute="bottom" secondItem="ttb-LA-WEs" secondAttribute="bottom" id="E65-QY-Y7v"/>
-                            <constraint firstItem="Mjg-Ha-IQz" firstAttribute="top" secondItem="ttb-LA-WEs" secondAttribute="top" id="NSH-sG-X6Z"/>
-                            <constraint firstItem="Mjg-Ha-IQz" firstAttribute="trailing" secondItem="ttb-LA-WEs" secondAttribute="trailing" id="WhD-hK-C1J"/>
-                            <constraint firstItem="Mjg-Ha-IQz" firstAttribute="leading" secondItem="ttb-LA-WEs" secondAttribute="leading" id="mDs-LW-z6E"/>
+                            <constraint firstItem="Mjg-Ha-IQz" firstAttribute="leading" secondItem="ttb-LA-WEs" secondAttribute="leading" id="LWe-m8-J48"/>
+                            <constraint firstItem="Mjg-Ha-IQz" firstAttribute="top" secondItem="ttb-LA-WEs" secondAttribute="top" id="Plh-AM-0YI"/>
+                            <constraint firstItem="Mjg-Ha-IQz" firstAttribute="trailing" secondItem="ttb-LA-WEs" secondAttribute="trailing" id="jmn-W4-fkc"/>
+                            <constraint firstItem="Mjg-Ha-IQz" firstAttribute="bottom" secondItem="ttb-LA-WEs" secondAttribute="bottom" id="l0D-3x-X7C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ttb-LA-WEs"/>
                     </view>
                     <navigationItem key="navigationItem" id="p2w-90-kNT"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="k3Z-Cz-Uab" id="zDi-lu-5Vt"/>
                         <outlet property="imageView" destination="5yA-i2-3Ke" id="6Bq-QW-2FX"/>
+                        <outlet property="leadingConstraint" destination="Ow6-gi-rP8" id="09V-L2-Rj2"/>
                         <outlet property="scrollView" destination="Mjg-Ha-IQz" id="baP-fK-UrD"/>
+                        <outlet property="topConstraint" destination="rpn-wb-lJT" id="WtE-PR-iXc"/>
+                        <outlet property="trailingConstraint" destination="QnZ-oK-7xL" id="CgU-ep-Og9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCK-fg-otn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -82,13 +86,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOW-Ce-eG1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3803" y="139"/>
+            <point key="canvasLocation" x="3717" y="484"/>
         </scene>
         <!--Фото-->
         <scene sceneID="xq5-MJ-9FT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HTh-CQ-iwJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Фото" image="photo" catalog="system" id="B40-F6-qnj"/>
+                    <tabBarItem key="tabBarItem" title="Фото" id="B40-F6-qnj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UMF-uT-OC6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -124,7 +128,22 @@
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JZH-ql-oqf">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ObO-i2-Qjp">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ObO-i2-Qjp" firstAttribute="top" secondItem="JZH-ql-oqf" secondAttribute="top" id="Bxt-Hz-Oq1"/>
+                                        <constraint firstAttribute="bottom" secondItem="ObO-i2-Qjp" secondAttribute="bottom" id="PaD-gP-pyz"/>
+                                        <constraint firstAttribute="trailing" secondItem="ObO-i2-Qjp" secondAttribute="trailing" id="gAD-rL-KSS"/>
+                                        <constraint firstItem="ObO-i2-Qjp" firstAttribute="leading" secondItem="JZH-ql-oqf" secondAttribute="leading" id="jnL-0i-QWk"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="photoImageView" destination="ObO-i2-Qjp" id="aQE-aD-3aa"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -145,7 +164,7 @@
         <scene sceneID="PB3-LE-PGH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Crr-Nc-nJq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Видео" image="video" catalog="system" id="aQj-xR-wfo"/>
+                    <tabBarItem key="tabBarItem" title="Видео" id="aQj-xR-wfo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yF2-ui-IB1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -181,7 +200,22 @@
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2Hq-D0-hif">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bCc-Kq-Jeq">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bCc-Kq-Jeq" firstAttribute="top" secondItem="2Hq-D0-hif" secondAttribute="top" id="I3g-gr-101"/>
+                                        <constraint firstItem="bCc-Kq-Jeq" firstAttribute="leading" secondItem="2Hq-D0-hif" secondAttribute="leading" id="J2t-NV-jDx"/>
+                                        <constraint firstAttribute="trailing" secondItem="bCc-Kq-Jeq" secondAttribute="trailing" id="VTM-O1-CmU"/>
+                                        <constraint firstAttribute="bottom" secondItem="bCc-Kq-Jeq" secondAttribute="bottom" id="ar0-Jd-y4O"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="videoImageView" destination="bCc-Kq-Jeq" id="ToL-V8-iJX"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -199,8 +233,4 @@
             <point key="canvasLocation" x="5732" y="840"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="photo" catalog="system" width="64" height="46"/>
-        <image name="video" catalog="system" width="64" height="40"/>
-    </resources>
 </document>

@@ -12,18 +12,11 @@ import SDWebImage
 
 class PhotosCell: UICollectionViewCell {
     
+    @IBOutlet weak var photoImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupPhotoImageView()
     }
-    
-     let photoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
     
     var photo: Hit! {
         didSet {
@@ -32,15 +25,4 @@ class PhotosCell: UICollectionViewCell {
             photoImageView.sd_setImage(with: url, completed: nil)
         }
     }
-    
-    
-    private func setupPhotoImageView() {
-        addSubview(photoImageView)
-        photoImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        photoImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        photoImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        photoImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        
-    }
-    
 }

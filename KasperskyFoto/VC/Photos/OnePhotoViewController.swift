@@ -13,6 +13,11 @@ class OnePhotoViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    
     var photoURL = ""
     
     override func viewDidLoad() {
@@ -21,7 +26,38 @@ class OnePhotoViewController: UIViewController, UIScrollViewDelegate {
         imageView!.sd_setImage(with: url, completed: nil)
     }
     
+    
+    override func viewWillLayoutSubviews() {
+      super.viewWillLayoutSubviews()
+      updateMinZoomScaleForSize(view.bounds.size)
+    }
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
+      return imageView
+    }
+    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+      updateConstraintsForSize(view.bounds.size)
+    }
+    
+    func updateMinZoomScaleForSize(_ size: CGSize) {
+      let widthScale = size.width / imageView.bounds.width
+      let heightScale = size.height / imageView.bounds.height
+      let minScale = min(widthScale, heightScale)
+
+      scrollView.minimumZoomScale = minScale
+      scrollView.zoomScale = minScale
+    }
+    
+    func updateConstraintsForSize(_ size: CGSize) {
+      let yOffset = max(0, (size.height - imageView.frame.height) / 2)
+      topConstraint.constant = yOffset
+      bottomConstraint.constant = yOffset
+      
+      let xOffset = max(0, (size.width - imageView.frame.width) / 2)
+      leadingConstraint.constant = xOffset
+      trailingConstraint.constant = xOffset
+        
+      view.layoutIfNeeded()
     }
 }
