@@ -29,6 +29,15 @@ class PhotosCollectionViewController: UICollectionViewController {
             }
             self?.collectionView.reloadData()
         }
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+    }
+    
+    @objc func appMovedToBackground() {
+        print("App moved to background!")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
+        cell.mass
     }
 
     // MARK: - Setup UI Elements
