@@ -93,7 +93,14 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showPhoto", sender: indexPath)
+        if photos.isEmpty {
+            let alertController = UIAlertController(title: "Нет сети", message: "Нельзя посмотреть полное изображения", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: "showPhoto", sender: indexPath)
+        }
+        
     }
     
 }
