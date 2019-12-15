@@ -32,17 +32,10 @@ class PhotosCollectionViewController: UICollectionViewController {
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
-
-        notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     @objc func appMovedToBackground() {
-        print("App moved to background!")
         defaults.set(cacheURLs, forKey: "cache")
-    }
-    
-    @objc func appMovedToForeground() {
-        print("App moved to foregraunds!")
     }
 
     // MARK: - Setup UI Elements
@@ -81,7 +74,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if photos.isEmpty {
-            return defaults.array(forKey: "cache")!.count
+            return defaults.array(forKey: "cache")?.count ?? 1
         }
         return photos.count
     }
@@ -116,7 +109,6 @@ extension PhotosCollectionViewController: UISearchBarDelegate {
             self.networkDataFetcher.fetchPhotos(searchTerm: searchText) { [weak self] (searchResults) in
                 guard let fetchedPhotos = searchResults else { return }
                 self?.photos = fetchedPhotos.hits
-                self?.defaults.removeObject(forKey: "cache")
                 self?.cacheURLs.removeAll()
                 for image in fetchedPhotos.hits {
                     self?.cacheURLs.append(image.webformatURL!)
