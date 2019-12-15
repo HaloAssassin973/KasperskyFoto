@@ -80,18 +80,22 @@ class PhotosCollectionViewController: UICollectionViewController {
     // MARK: - UICollecionViewDataSource, UICollecionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if photos.isEmpty {
+            return defaults.array(forKey: "cache")!.count
+        }
         return photos.count
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
-        cell.photo = photos[indexPath.item]
+        
         if photos.isEmpty {
             let urls = defaults.array(forKey: "cache") as! [String]
             cell.photoImageView.image = SDImageCache.shared.imageFromCache(forKey: urls[indexPath.row])
+        } else {
+            cell.photo = photos[indexPath.item]
         }
-//        print(SDImageCache.shared.imageFromCache(forKey: photos[indexPath.row].webformatURL!))
         return cell
     }
     
@@ -128,6 +132,9 @@ extension PhotosCollectionViewController: UISearchBarDelegate {
 extension PhotosCollectionViewController: WaterfallLayoutDelegate {
     func waterfallLayout(_ layout: WaterfallLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
+        if photos.isEmpty {
+            return CGSize(width: 100, height: 100)
+        }
         let photo = photos[indexPath.item]
         return CGSize(width: photo.webformatWidth!, height: photo.webformatHeight!)
     }
