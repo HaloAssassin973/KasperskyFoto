@@ -40,9 +40,9 @@ class PhotosCollectionViewController: UICollectionViewController {
         print("App moved to background!")
         defaults.set(cacheURLs, forKey: "cache")
     }
+    
     @objc func appMovedToForeground() {
         print("App moved to foregraunds!")
-        print(defaults.array(forKey: "cache"))
     }
 
     // MARK: - Setup UI Elements
@@ -87,6 +87,10 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
         cell.photo = photos[indexPath.item]
+        if photos.isEmpty {
+            let urls = defaults.array(forKey: "cache") as! [String]
+            cell.photoImageView.image = SDImageCache.shared.imageFromCache(forKey: urls[indexPath.row])
+        }
 //        print(SDImageCache.shared.imageFromCache(forKey: photos[indexPath.row].webformatURL!))
         return cell
     }
@@ -108,6 +112,7 @@ extension PhotosCollectionViewController: UISearchBarDelegate {
             self.networkDataFetcher.fetchPhotos(searchTerm: searchText) { [weak self] (searchResults) in
                 guard let fetchedPhotos = searchResults else { return }
                 self?.photos = fetchedPhotos.hits
+                self?.defaults.removeObject(forKey: "cache")
                 self?.cacheURLs.removeAll()
                 for image in fetchedPhotos.hits {
                     self?.cacheURLs.append(image.webformatURL!)
@@ -125,6 +130,5 @@ extension PhotosCollectionViewController: WaterfallLayoutDelegate {
         
         let photo = photos[indexPath.item]
         return CGSize(width: photo.webformatWidth!, height: photo.webformatHeight!)
-//        return CGSize(width: 100, height: 100)
     }
 }
