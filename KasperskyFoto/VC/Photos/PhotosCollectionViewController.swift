@@ -68,8 +68,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
-        let url = URL(string: photos[indexPath.row].webformatURL!)
-        cell.photoImageView.sd_setImage(with: url, completed: nil)
+        cell.photo = photos[indexPath.item]
         print(SDImageCache.shared.imageFromCache(forKey: photos[indexPath.row].webformatURL!))
         return cell
     }

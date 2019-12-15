@@ -16,4 +16,12 @@ class VideosCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    var video: Hit? {
+        didSet {
+            let videoUrl = "https://i.vimeocdn.com/video/\(video?.pictureID ?? "773604276")_200x150.jpg"
+            let url = URL(string: videoUrl)
+            videoImageView.sd_setImage(with: url, completed: nil)
+        }
+    }
 }
