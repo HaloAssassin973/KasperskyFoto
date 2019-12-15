@@ -21,7 +21,7 @@ class PhotosCell: UICollectionViewCell {
             let photoUrl = photo.webformatURL!
             let url = URL(string: photoUrl)
             photoImageView.sd_setImage(with: url, completed: nil)
-            print(SDImageCache.shared.diskCachePath)
+            //print(SDImageCache.shared.diskCachePath)
         }
     }
 }

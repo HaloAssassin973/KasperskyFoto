@@ -32,12 +32,17 @@ class PhotosCollectionViewController: UICollectionViewController {
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+
+        notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     @objc func appMovedToBackground() {
         print("App moved to background!")
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
-        cell.mass
+        defaults.set(cacheURLs, forKey: "cache")
+    }
+    @objc func appMovedToForeground() {
+        print("App moved to foregraunds!")
+        print(defaults.array(forKey: "cache"))
     }
 
     // MARK: - Setup UI Elements
