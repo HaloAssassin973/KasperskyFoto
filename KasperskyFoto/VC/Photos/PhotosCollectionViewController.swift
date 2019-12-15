@@ -14,7 +14,8 @@ class PhotosCollectionViewController: UICollectionViewController {
     var timer: Timer?
     
     var photos = [Hit]()
-
+    var cacheURLs = [String]()
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,9 @@ class PhotosCollectionViewController: UICollectionViewController {
         networkDataFetcher.fetchPhotos(searchTerm: "") { [weak self] (searchResults) in
             guard let fetchedPhotos = searchResults else { return }
             self?.photos = fetchedPhotos.hits
+            for image in fetchedPhotos.hits {
+                self?.cacheURLs.append(image.webformatURL!)
+            }
             self?.collectionView.reloadData()
         }
     }
@@ -69,7 +73,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
         cell.photo = photos[indexPath.item]
-        print(SDImageCache.shared.imageFromCache(forKey: photos[indexPath.row].webformatURL!))
+//        print(SDImageCache.shared.imageFromCache(forKey: photos[indexPath.row].webformatURL!))
         return cell
     }
     
@@ -90,6 +94,10 @@ extension PhotosCollectionViewController: UISearchBarDelegate {
             self.networkDataFetcher.fetchPhotos(searchTerm: searchText) { [weak self] (searchResults) in
                 guard let fetchedPhotos = searchResults else { return }
                 self?.photos = fetchedPhotos.hits
+                self?.cacheURLs.removeAll()
+                for image in fetchedPhotos.hits {
+                    self?.cacheURLs.append(image.webformatURL!)
+                }
                 self?.collectionView.reloadData() 
             }
         })
