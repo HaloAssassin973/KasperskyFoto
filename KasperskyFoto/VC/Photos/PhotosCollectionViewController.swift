@@ -74,7 +74,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if photos.isEmpty {
-            return defaults.array(forKey: "cache")?.count ?? 1
+            return defaults.array(forKey: "cache")?.count ?? 0
         }
         return photos.count
     }
