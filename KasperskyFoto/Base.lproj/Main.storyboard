@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QYM-xG-dff">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QYM-xG-dff">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -92,7 +92,7 @@
         <scene sceneID="xq5-MJ-9FT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HTh-CQ-iwJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Фото" id="B40-F6-qnj"/>
+                    <tabBarItem key="tabBarItem" title="Фото" image="icons8-camera-24" id="B40-F6-qnj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UMF-uT-OC6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -164,7 +164,7 @@
         <scene sceneID="PB3-LE-PGH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Crr-Nc-nJq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Видео" id="aQj-xR-wfo"/>
+                    <tabBarItem key="tabBarItem" title="Видео" image="icons8-vintage-camera-24" id="aQj-xR-wfo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yF2-ui-IB1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -233,4 +233,8 @@
             <point key="canvasLocation" x="5732" y="840"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-camera-24" width="24" height="24"/>
+        <image name="icons8-vintage-camera-24" width="24" height="24"/>
+    </resources>
 </document>
