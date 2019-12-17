@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Reachability
 
 class VideosCollectionViewController: UICollectionViewController {
 
     var networkDataFetcher = NetworkDataFetcher()
     var timer: Timer?
+    let reachability = try! Reachability()
     
     var videos = [Hit]()
     
@@ -72,7 +74,14 @@ class VideosCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showVideo", sender: indexPath)
+        if reachability.connection == .unavailable {
+            let alertController = UIAlertController(title: "Нет сети", message: "Нельзя посмотреть видео", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: "showVideo", sender: indexPath)
+        }
+        
     }
 }
 

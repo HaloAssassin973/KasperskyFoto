@@ -8,10 +8,13 @@
 
 import UIKit
 import SDWebImage
+import Reachability
 
 class PhotosCollectionViewController: UICollectionViewController {
+    
     var networkDataFetcher = NetworkDataFetcher()
     var timer: Timer?
+    let reachability = try! Reachability()
     
     var photos = [Hit]()
     var cacheURLs = [String]()
@@ -29,13 +32,6 @@ class PhotosCollectionViewController: UICollectionViewController {
             }
             self?.collectionView.reloadData()
         }
-        
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
-    }
-    
-    @objc func appMovedToBackground() {
-        defaults.set(cacheURLs, forKey: "cache")
     }
 
     // MARK: - Setup UI Elements
@@ -73,17 +69,16 @@ class PhotosCollectionViewController: UICollectionViewController {
     // MARK: - UICollecionViewDataSource, UICollecionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if photos.isEmpty {
+        if reachability.connection == .unavailable {
             return defaults.array(forKey: "cache")?.count ?? 0
         }
         return photos.count
     }
     
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
         
-        if photos.isEmpty {
+        if reachability.connection == .unavailable {
             let urls = defaults.array(forKey: "cache") as! [String]
             cell.photoImageView.image = SDImageCache.shared.imageFromCache(forKey: urls[indexPath.row])
         } else {
@@ -93,14 +88,13 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if photos.isEmpty {
+        if reachability.connection == .unavailable {
             let alertController = UIAlertController(title: "Нет сети", message: "Нельзя посмотреть полное изображения", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alertController, animated: true, completion: nil)
         } else {
             performSegue(withIdentifier: "showPhoto", sender: indexPath)
         }
-        
     }
     
 }
@@ -131,7 +125,7 @@ extension PhotosCollectionViewController: UISearchBarDelegate {
 extension PhotosCollectionViewController: WaterfallLayoutDelegate {
     func waterfallLayout(_ layout: WaterfallLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if photos.isEmpty {
+        if reachability.connection == .unavailable {
             return CGSize(width: 100, height: 100)
         }
         let photo = photos[indexPath.item]
